@@ -14,3 +14,4 @@ INNER JOIN (Hoặc JOIN): Selects từ khóa tất cả các hàng khi có " í
 LEFT OUTER JOIN (Hoặc LEFT JOIN): Trả lại tất cả các dòng từ bảng bên trái, và các dòng đúng với điều kiện từ bảng bên phải
 
 RIGHT OUTER JOIN (Hoặc RIGHT JOIN): Trả lại tất cả các hàng từ bảng bên phải, và các dòng thỏa mãn điều kiện từ bảng bên trái
+sadsfsafsa
