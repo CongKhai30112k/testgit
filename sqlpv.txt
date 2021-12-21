@@ -1,0 +1,16 @@
+
+INSERT INTO nhanvien
+(nhanvien_id, ho, ten)
+VALUES 
+(19, ‘Anderson’, ‘Sarah’),
+(11, ‘Johnson’, ‘Dale’);
+
+UPDATE NHANVIEN SET DIACHI = 'Hanoi' WHERE ID = 3;
+
+DELETE FROM CUSTOMERS WHERE ID = 3;
+
+INNER JOIN (Hoặc JOIN): Selects từ khóa tất cả các hàng khi có " ít nhất một giá trị ở cả hai bảng "
+
+LEFT OUTER JOIN (Hoặc LEFT JOIN): Trả lại tất cả các dòng từ bảng bên trái, và các dòng đúng với điều kiện từ bảng bên phải
+
+RIGHT OUTER JOIN (Hoặc RIGHT JOIN): Trả lại tất cả các hàng từ bảng bên phải, và các dòng thỏa mãn điều kiện từ bảng bên trái
