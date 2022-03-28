@@ -13,6 +13,7 @@
 	<properties>
 		<mysql.version>8.0.13</mysql.version>
 		<jsonwebtoken.version>0.9.0</jsonwebtoken.version>
+		<sitemesh.version>2.4.2</sitemesh.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -49,6 +50,26 @@
             <artifactId>jjwt</artifactId>
             <version>${jsonwebtoken.version}</version>
         </dependency>
+        
+        <!-- JSTL for JSP -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<!-- Need this to compile JSP -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--template sitemesh decorator-->
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>${sitemesh.version}</version>
+		</dependency>
         
          <dependency>
         <groupId>com.h2database</groupId>
