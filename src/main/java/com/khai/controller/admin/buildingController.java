@@ -21,9 +21,12 @@ public class buildingController {
 	private IBuildingService buildingService;
 	
     @RequestMapping(value = "/admin/building-list", method = RequestMethod.GET)
-	public ModelAndView buildingList() {
+	public ModelAndView buildingList(@ModelAttribute("modelSearch") BuildingDTO buildingDTO,
+								@RequestBody Map<String, Object> parameter,
+								@RequestParam(value = "types", required = false) String[] types) {
 		ModelAndView mav = new ModelAndView("admin/building/list");
-
+		mav.addObject("modelSearch", buildingDTO);
+		mav.addObject("buildings", buildingService.find(parameter, types));
 		return mav;
 	}
 
