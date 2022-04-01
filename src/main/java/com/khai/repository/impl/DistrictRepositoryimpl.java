@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.khai.dto.BuildingDTO;
-import com.khai.entity.AreaRentEntity;
+import com.khai.entity.RentAreaEntity;
 import com.khai.entity.BuildingEntity;
 import com.khai.entity.DistrictEntity;
 import com.khai.entity.UserEntity;

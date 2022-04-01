@@ -1,26 +1,14 @@
-package com.khai.entity;
+package com.khai.dto;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
-import com.google.protobuf.Timestamp;
-
-@Entity
-@Table(name = "user")
-public class UserEntity extends BaseEntity {
-
-	@Column(name = "username")
+public class UserDTO extends AbstractDTO<UserDTO> {
+	
 	private String userName;
-	@Column(name = "password")
 	private String password;
-	@Column(name = "fullname")
 	private String fullName;
-	@Column(name = "phone")
 	private String phone;
-	@Column(name = "email")
 	private String email;
-	@Column(name = "status")
 	private String status;
 	public String getUserName() {
 		return userName;

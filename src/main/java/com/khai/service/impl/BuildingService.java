@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import com.khai.entity.AreaRentEntity;
+import com.khai.entity.RentAreaEntity;
 import com.khai.entity.BuildingEntity;
 import com.khai.entity.DistrictEntity;
 import com.khai.entity.UserEntity;

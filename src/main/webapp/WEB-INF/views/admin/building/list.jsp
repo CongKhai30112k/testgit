@@ -61,8 +61,8 @@
 									</div>
 									<div class="widget-body">
 										<div class="widget-main">
-										<form:form commandName="modelSearch" action="${buildingListURL}" id="listForm" method="GET">
-											<%-- <div class="row">
+										<form:form modelAttribute="modelSearch" action="${buildingListURL}" id="listForm" method="GET">
+											<div class="row">
 												<div class="col-xs-12">
 													<!-- PAGE CONTENT BEGINS -->
 													<div class="col-sm-6">
@@ -187,7 +187,7 @@
 															</select>
 														</div>
 													</div>
-												</div><!-- /.col --> --%>
+												</div><!-- /.col --> 
 											</div>
 											
 											<div class="row">

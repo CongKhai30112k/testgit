@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,12 +22,12 @@ public class buildingController {
 	private IBuildingService buildingService;
 	
     @RequestMapping(value = "/admin/building-list", method = RequestMethod.GET)
-	public ModelAndView buildingList(@ModelAttribute("modelSearch") BuildingDTO buildingDTO,
-								@RequestBody Map<String, Object> parameter,
-								@RequestParam(value = "types", required = false) String[] types) {
+	public ModelAndView buildingList(@ModelAttribute("modelSearch") BuildingDTO buildingDTO
+								/*@RequestParam Map<String, Object> parameter,
+								@RequestParam(value = "types", required = false) String[] types*/) {
 		ModelAndView mav = new ModelAndView("admin/building/list");
 		mav.addObject("modelSearch", buildingDTO);
-		mav.addObject("buildings", buildingService.find(parameter, types));
+		//mav.addObject("buildings", buildingService.find(parameter, types));
 		return mav;
 	}
 

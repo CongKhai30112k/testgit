@@ -21,7 +21,7 @@ import com.khai.Utils.MapUtils;
 import com.khai.Utils.ValidateUtils;
 import com.khai.constant.SystemConstant;
 import com.khai.dto.BuildingDTO;
-import com.khai.entity.AreaRentEntity;
+import com.khai.entity.RentAreaEntity;
 import com.khai.entity.BuildingEntity;
 import com.khai.entity.UserEntity;
 import com.khai.repository.BuildingRepository;
