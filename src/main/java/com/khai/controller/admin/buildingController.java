@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.khai.dto.BuildingDTO;
-import com.khai.service.IBuildingService;
+import com.khai.service.BuildingService;
 
 @Controller(value = "buildingControllerOfAdmin")
 public class buildingController {
 
 	@Autowired
-	private IBuildingService buildingService;
+	private BuildingService buildingService;
 	
     @RequestMapping(value = "/admin/building-list", method = RequestMethod.GET)
-	public ModelAndView buildingList(@ModelAttribute("modelSearch") BuildingDTO buildingDTO
-								/*@RequestParam Map<String, Object> parameter,
-								@RequestParam(value = "types", required = false) String[] types*/) {
+	public ModelAndView buildingList(@ModelAttribute("modelSearch") BuildingDTO buildingDTO,
+								@RequestParam Map<String, Object> parameter,
+								@RequestParam(value = "types", required = false) String[] types) {
 		ModelAndView mav = new ModelAndView("admin/building/list");
 		mav.addObject("modelSearch", buildingDTO);
-		//mav.addObject("buildings", buildingService.find(parameter, types));
+		mav.addObject("buildings", buildingService.find(parameter, types));
 		return mav;
 	}
 

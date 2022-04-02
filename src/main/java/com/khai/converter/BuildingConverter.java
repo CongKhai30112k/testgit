@@ -29,7 +29,7 @@ public class BuildingConverter {
 		dto.setServiceCost(dto.getServiceCost());
 		dto.setCostDescription(dto.getCostDescription());*/
 		//DistrictEntity district = districtRepositoryimpl.findDistrict(entity.getDistrictid());
-		//dto.setAddress(entity.getStreet() +", "+ entity.getWard() +", "+district.getName());
+		dto.setAddress(entity.getStreet() +", "+ entity.getWard() +", "+entity.getDistrict());
 		return dto;
 	}
 	

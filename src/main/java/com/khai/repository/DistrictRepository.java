@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
 
 public interface DistrictRepository {
-	DistrictEntity findDistrict(String districtId);
+	DistrictEntity findById(Long id);
 
 }
