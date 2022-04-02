@@ -3,23 +3,16 @@ package com.khai.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "rentarea")
-public class RentAreaEntity extends  BaseEntity{
-
-    @Column(name = "value")
-    private int value;
+@Table(name = "assignmentbuilding")
+public class AssignmentBuildingEntity extends BaseEntity{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "buildingid")
     private BuildingEntity buildingEntity;
 
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "staffid")
+    private UserEntity userEntity;
 
     public BuildingEntity getBuildingEntity() {
         return buildingEntity;
@@ -27,5 +20,13 @@ public class RentAreaEntity extends  BaseEntity{
 
     public void setBuildingEntity(BuildingEntity buildingEntity) {
         this.buildingEntity = buildingEntity;
+    }
+
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
+
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 }

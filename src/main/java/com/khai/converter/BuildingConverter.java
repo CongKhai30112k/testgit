@@ -1,9 +1,9 @@
 package com.khai.converter;
 
 import com.khai.entity.BuildingEntity;
-import com.khai.entity.DistrictEntity;
-import com.khai.repository.DistrictRepository;
-
+/*import com.khai.entity.DistrictEntity;
+*//*import com.khai.repository.DistrictRepository;
+*/
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,8 +13,8 @@ import com.khai.dto.BuildingDTO;
 @Component
 public class BuildingConverter {
 	
-	@Autowired 
-	private DistrictRepository districtRepositoryimpl;
+/*	@Autowired 
+	private DistrictRepository districtRepositoryimpl;*/
 	
 	private ModelMapper modelMapper = new ModelMapper();
 	

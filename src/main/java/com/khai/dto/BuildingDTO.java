@@ -17,7 +17,7 @@ public class BuildingDTO extends AbstractDTO<BuildingDTO> {
 	private String areaRentFrom;
 	private String areaRentTo;
 	private String staffId;
-	private int areaRent;
+	private String areaRent;
 	private String address;
 	private String type;
 	private String direction;
@@ -113,10 +113,10 @@ public class BuildingDTO extends AbstractDTO<BuildingDTO> {
 	public void setStaffId(String staffId) {
 		this.staffId = staffId;
 	}
-	public int getAreaRent() {
+	public String getAreaRent() {
 		return areaRent;
 	}
-	public void setAreaRent(int areaRent) {
+	public void setAreaRent(String areaRent) {
 		this.areaRent = areaRent;
 	}
 	public String getAddress() {
