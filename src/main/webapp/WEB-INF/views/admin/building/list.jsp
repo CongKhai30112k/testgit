@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>	
- <c:url var="buildingListURL" value="/admin/building-list" />
+ <c:url var="buildingListURL" value="/admin/building-list-find" />
 
 <!DOCTYPE html>
 <html>
@@ -180,11 +180,15 @@
 													</div>
 													<div class="col-sm-4">
 														<div>
-															<label for="staffId">Chọn nhân viên phụ trách</label>
+															<!-- <label for="staffId">Chọn nhân viên phụ trách</label>
 															<select class="form-control" id="staffId">
 																<option value="">--Chọn nhân viên phụ trách--</option>
 																<option value="AL">Alabama</option>
-															</select>
+															</select> -->
+															<form:select path="staffId">
+																<form:option value = "-1" lable="-----chọn nhân viên-----"/>
+																<form:options items="${staffmaps }"/>
+															</form:select>
 														</div>
 													</div>
 												</div><!-- /.col --> 
@@ -365,7 +369,7 @@
 			function assignStaff(data){
 				$.ajax({
                     type: "post",
-                    url: "/api-user-assignment",
+                    url: "/admin/api-user-assignment",
                     data: JSON.stringify(data),
                     dataType: "json",
 					contentType: "application/json",
@@ -390,7 +394,7 @@
 			function deleteBuilding(data){
 				$.ajax({
                     type: "Delete",
-                    url: "/api-user-assignment",
+                    url: "/api-building",
                     data: JSON.stringify(data),
                     dataType: "json",
 					contentType: "application/json",

@@ -13,4 +13,5 @@ public interface BuildingService {
 	void save(BuildingDTO buildingDTO);
 	Map<String, String> getDistricts();
 	Map<String, String> getBuildingTypes();
+	void assign(Long buildingId, Long[] staffId);
 }

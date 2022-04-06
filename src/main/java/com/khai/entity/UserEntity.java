@@ -1,104 +1,76 @@
 package com.khai.entity;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.google.protobuf.Timestamp;
+
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class UserEntity extends BaseEntity {
 
-    private static final long serialVersionUID = -4988455421375043688L;
-
-    @Column(name = "username", nullable = false, unique = true)
-    private String userName;
-
-    @Column(name = "fullname", nullable = false)
-    private String fullName;
-
-    @Column(name = "password", nullable = false)
-    private String password;
-
-    @Column(name = "status", nullable = false)
-    private Integer status;
-
-    @Column(name = "email", unique = true)
-    private String email;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "role_id", nullable = false))
-    private List<RoleEntity> roles = new ArrayList<>();
-
-    @OneToMany(mappedBy = "userEntity",fetch = FetchType.LAZY)
-    private List<AssignmentBuildingEntity> assignmentBuildingEntities = new ArrayList<>();
-
-    @OneToMany(mappedBy = "userEntity",fetch = FetchType.LAZY)
-    private List<AssignmentCustomerEntity> assignmentCustomerEntities = new ArrayList<>();
-
-    public List<AssignmentBuildingEntity> getAssignmentBuildingEntities() {
-        return assignmentBuildingEntities;
-    }
-
-    public void setAssignmentBuildingEntities(List<AssignmentBuildingEntity> assignmentBuildingEntities) {
-        this.assignmentBuildingEntities = assignmentBuildingEntities;
-    }
-
-    public List<AssignmentCustomerEntity> getAssignmentCustomerEntities() {
-        return assignmentCustomerEntities;
-    }
-
-    public void setAssignmentCustomerEntities(List<AssignmentCustomerEntity> assignmentCustomerEntities) {
-        this.assignmentCustomerEntities = assignmentCustomerEntities;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public List<RoleEntity> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<RoleEntity> roles) {
-        this.roles = roles;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
+	@Column(name = "username")
+	private String userName;
+	@Column(name = "password")
+	private String password;
+	@Column(name = "fullname")
+	private String fullName;
+	@Column(name = "phone")
+	private String phone;
+	@Column(name = "email")
+	private String email;
+	@Column(name = "status")
+	private String status;
+	
+	@OneToMany(mappedBy = "userEntity")
+	private List<UserRoleEntity> userRoles = new ArrayList<>();
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public List<UserRoleEntity> getUserRoles() {
+		return userRoles;
+	}
+	public void setUserRoles(List<UserRoleEntity> userRoles) {
+		this.userRoles = userRoles;
+	}
+	
 }

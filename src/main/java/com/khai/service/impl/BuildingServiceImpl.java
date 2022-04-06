@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.khai.converter.BuildingConverter;
 import com.khai.dto.BuildingDTO;
+import com.khai.repository.AssignBuildingRepository;
 import com.khai.repository.BuildingRepository;
 /*import com.khai.repository.DistrictRepository;
 */import com.khai.repository.RentAreaRepository;
+import com.khai.repository.UserRepository;
 import com.khai.repository.custom.BuildingRepositoryCustom;
 import com.khai.service.BuildingService;
 
@@ -39,6 +41,12 @@ public class BuildingServiceImpl implements BuildingService {
 	
 	@Autowired
 	private RentAreaRepository rentAreaRepositoryimpl;
+	
+	@Autowired
+	UserRepository UserRepositoryimpl;
+	
+	@Autowired
+	AssignBuildingRepository assignBuildingRepositoryimpl;
 	
 	@Override
 	public Map<String, String> getDistricts() {
@@ -92,5 +100,12 @@ public class BuildingServiceImpl implements BuildingService {
 		long id = buildingRepositoryimpl.save(buildingEntity).getId();
 		rentAreaRepositoryimpl.save(rentArea, id);
 	}
+
+	@Override
+	public void assign(Long buildingId, Long[] staffId) {
+
+		assignBuildingRepositoryimpl.assign(buildingId, staffId);
+	}
+
 
 }

@@ -1,5 +1,6 @@
 package com.khai.controller.admin;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.khai.dto.BuildingDTO;
 import com.khai.service.BuildingService;
+import com.khai.service.UserService;
 
 @Controller(value = "buildingControllerOfAdmin")
 public class buildingController {
@@ -21,13 +23,25 @@ public class buildingController {
 	@Autowired
 	private BuildingService buildingService;
 	
+	@Autowired
+	private UserService userService;
+	
     @RequestMapping(value = "/admin/building-list", method = RequestMethod.GET)
-	public ModelAndView buildingList(@ModelAttribute("modelSearch") BuildingDTO buildingDTO,
+	public ModelAndView buildingList(@ModelAttribute("modelSearch") BuildingDTO buildingDTO) {
+		ModelAndView mav = new ModelAndView("admin/building/list");
+		mav.addObject("modelSearch", buildingDTO);
+		mav.addObject("staffmaps",userService.getStaffMaps());
+		return mav;
+	}
+    
+    @RequestMapping(value = "/admin/building-list-find", method = RequestMethod.GET)
+	public ModelAndView buildingFind(@ModelAttribute("modelSearch") BuildingDTO buildingDTO,
 								@RequestParam Map<String, Object> parameter,
 								@RequestParam(value = "types", required = false) String[] types) {
 		ModelAndView mav = new ModelAndView("admin/building/list");
 		mav.addObject("modelSearch", buildingDTO);
-		mav.addObject("buildings", buildingService.find(parameter, types));
+		mav.addObject("buildings", buildingService.find(parameter, types));		
+		mav.addObject("staffmaps",userService.getStaffMaps());
 		return mav;
 	}
 
